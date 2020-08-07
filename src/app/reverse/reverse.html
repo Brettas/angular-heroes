@@ -1,0 +1,20 @@
+<h2>Reverse Heroes</h2>
+
+<table class="table table-sm table-dark">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Skills</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td> <a routerLink="/detail/{{hero.id}}">{{ hero.name | reverse}}</a></td>
+      <td> <a routerLink="/detail/{{hero.id}}">{{ hero.skills | reverse}}</a></td>
+    </tr>
+  </tbody>
+</table>
+
+

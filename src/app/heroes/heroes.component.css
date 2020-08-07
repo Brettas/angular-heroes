@@ -1,0 +1,57 @@
+
+.heroes {
+    list-style-type: none;
+    width: 200px;
+    display: inline-block;
+
+    
+  }
+  .heroes li {
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    background-color: lavender;
+    margin: .5em;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  
+  
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  
+
+  .heroes li:hover {
+    color: black;
+    background-color: mintcream;
+    left: .1em;
+  }
+  .heroes li.selected {
+    background-color: #0bb6ff;
+    color: white;
+  }
+  .heroes li.selected:hover {
+    background-color: darkgrey;
+    color: blue;
+  }
+   .badge {
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  input{
+    text-align: center;
+    color: black;
+    font-size: medium;
+    font-style:oblique;
+
+  }
+
+  button.close{
+    float: left;
+    scale: small;
+  }
+    
+
+  
