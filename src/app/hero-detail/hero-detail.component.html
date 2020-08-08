@@ -1,9 +1,9 @@
 <div id="card" class="card bg-light " style="max-width: 18rem;" *ngIf="hero">
   <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li [ngbNavItem]="1">
-      <a ngbNavLink>Principal</a>
+      <a ngbNavLink><b>Principal</b></a>
       <ng-template ngbNavContent>
-        <div class="card-header">Details</div>
+        <div class="card-header"><b>Details</b></div>
         <div class="card-body">
           <h5 class="card-title">{{hero.name | uppercase}}</h5>
           <div>
@@ -27,19 +27,23 @@
       </ng-template>
     </li>
     <li [ngbNavItem]="2">
-      <a ngbNavLink>Reverse</a>
+      <a ngbNavLink><b>Reverse</b></a>
       <ng-template ngbNavContent>
-        <div class="card-header">Reverse Details </div>
+        <div class="card-header"><b>Reverse Details</b></div>
         <div class="card-body">
           <div>
             <span class="badge badge-info">ID:{{hero.id }}</span>
           </div>
           <div>
+          <label>Hero Name
             <h5 class="card-title">{{hero.name | reverse }}</h5>
-            <p class="card-text">{{hero.skills | reverse }}</p>
+          </label>
           </div>
-          <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-          <button class="btn btn-primary" (click)="save()" [disabled]="!formulario.valid">Save</button>
+          <div>
+            <label> Hero Skills
+            <h5 class="card-title">{{hero.skills| reverse }}</h5>
+          </label>
+          </div>
         </div>
       </ng-template>
     </li>
