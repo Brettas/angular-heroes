@@ -1,33 +1,61 @@
 <div id="card" class="card bg-light " style="max-width: 18rem;" *ngIf="hero">
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li [ngbNavItem]="1">
         <a  ngbNavLink>Principal</a>
+        <ng-template ngbNavContent>
+          
+          <div class="card-header">Details</div>
+          <div class="card-body">
+            <h5 class="card-title">{{hero.name | uppercase}}</h5>
+            <div>
+              <span class="badge badge-info">ID:{{hero.id}}</span>
+            </div>
+            <form class="form-horizontal" (ngSubmit)="save()" [formGroup]="formulario">
+              <div class="form-group">
+                <label for="name">Hero Name
+                  <input type="text"  class="form-control"  formControlName="name">
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="skills" >Skills
+                  <input type="text"  class="form-control"  formControlName="skill">
+                </label>
+              </div>
+              <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+              <button class="btn btn-primary" (click)="save()" [disabled]="!formulario.valid">Save</button>
+            </form>
+          </div>
+
+        </ng-template>
     </li>
-    <li [ngbNavItem]="2">
-        <a routerLink="//reverse" ngbNavLink>Reverse</a>
+    <li  [ngbNavItem]="2">
+        <a  ngbNavLink>Reverse</a>
+        <ng-template ngbNavContent>
+          
+          <div class="card-header">Details</div>
+          <div class="card-body">
+            <div>
+              <span class="badge badge-info">ID:{{hero.id }}</span>
+            </div>
+            <h5 class="card-title">{{hero.name | reverse }}</h5>
+            
+              <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+              <button class="btn btn-primary" (click)="save()" [disabled]="!formulario.valid">Save</button>
+          
+          </div>
+
+
+
+          
+
+
+        </ng-template>
     </li>
 </ul>
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
-<div class="card-header">Details</div>
-  <div class="card-body">
-    <h5 class="card-title">{{hero.name | uppercase}}</h5>
-    <div>
-      <span class="badge badge-info">ID:{{hero.id}}</span>
-    </div>
-    <form class="form-horizontal" (ngSubmit)="save()" [formGroup]="formulario">
-      <div class="form-group">
-        <label for="name">Hero Name
-          <input type="text"  class="form-control"  formControlName="name">
-        </label>
-      </div>
-      <div class="form-group">
-        <label for="skills" >Skills
-          <input type="text"  class="form-control"  formControlName="skill">
-        </label>
-      </div>
-      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-      <button class="btn btn-primary" (click)="save()" [disabled]="!formulario.valid">Save</button>
-    </form>
-  </div>
+
+
+
+
   
   

@@ -17,7 +17,6 @@ export class HeroDetailComponent implements OnInit {
   hero: Hero;
   protected routeSubcription: Subscription;
   formulario: FormGroup;
-  active = '1';
   
 
   constructor(

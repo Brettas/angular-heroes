@@ -13,10 +13,9 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { NgbModule, NgbNavContent, NgbNav, NgbNavItem, NgbNavLink, NgbNavOutlet, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgPipesModule, } from 'ngx-pipes';
-import { ReverseComponent } from './reverse/reverse.pipe';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { ReversePipe } from './ReversePipe';
 
 
 @NgModule({
@@ -28,7 +27,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgPipesModule,
+
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false },
     )
@@ -36,17 +35,15 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: [
     AppComponent,
+    ReversePipe,
     HomeComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    ReverseComponent,
-
-  ],exports:[
 
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
