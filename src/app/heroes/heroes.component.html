@@ -1,8 +1,8 @@
 <h2>My Heroes</h2>
 <app-hero-search></app-hero-search>
 <div>
-  <label>Hero name:
-    <input #heroName />
+  <label>
+    <input  placeholder="Add Hero" #heroName />
     <button class="btn btn-success" (click)="add(heroName.value); heroName.value=''">Add</button>
   </label>
 </div>
@@ -10,7 +10,7 @@
   <li *ngFor="let hero of heroes ">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge badge-primary">{{hero.id}}</span> {{hero.name}}</a>
-      <button type="button" class="close" aria-label="Close" (click)="delete(hero)">
+      <button type="button" class="close badge-dark" aria-label="Close" (click)="delete(hero)">
         <span aria-hidden="true">&times;</span>
       </button>
     </li>

@@ -3,7 +3,7 @@
   #search-box {
     width: 50%;
     height: 20%;
-    display: inline-block;
+    margin: auto;
   }
   
   
@@ -14,4 +14,5 @@
     height: 20%;
     display: inline-block;
   }
+ 
  
