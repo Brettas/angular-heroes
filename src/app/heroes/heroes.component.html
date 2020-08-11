@@ -7,9 +7,9 @@
   </label>
 </div>
 <ul class="heroes list-group">
-  <li *ngFor="let hero of heroes ">
+  <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-      <span class="badge badge-primary">{{hero.id}}</span> {{hero.name}}</a>
+      <span class="badge badge-primary">{{hero.id}}</span> {{hero.name | uppercase}}</a>
       <button type="button" class="close badge-dark" aria-label="Close" (click)="delete(hero)">
         <span aria-hidden="true">&times;</span>
       </button>
