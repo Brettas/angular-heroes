@@ -1,0 +1,54 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "hola",
+      "skills": "super"
+    },
+    {
+      "id": 2,
+      "name": "Flash",
+      "skills": "Super velocidade"
+    },
+    {
+      "id": 3,
+      "name": "Bombasto",
+      "skills": "Sopro congelante"
+    },
+    {
+      "id": 4,
+      "name": "Celeritas",
+      "skills": "Super Sentidos"
+    },
+    {
+      "id": 5,
+      "name": "Magneta",
+      "skills": "Super agilidade"
+    },
+    {
+      "id": 6,
+      "name": "RubberMan",
+      "skills": "Voo"
+    },
+    {
+      "id": 7,
+      "name": "Dynama",
+      "skills": "Super-força"
+    },
+    {
+      "id": 8,
+      "name": "Dr IQ",
+      "skills": "Super Inteligencia"
+    },
+    {
+      "id": 9,
+      "name": "Magma",
+      "skills": "Fogo"
+    },
+    {
+      "id": 10,
+      "name": "Tornado",
+      "skills": "Ventania"
+    }
+  ]
+}

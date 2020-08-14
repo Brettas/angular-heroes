@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap, retry } from 'rxjs/operators';
 
 import { Hero } from './hero';
 import { MessageService } from './message.service';
@@ -11,7 +11,7 @@ import { MessageService } from './message.service';
 
 @Injectable({ providedIn: 'root' })
 export class HeroService   {
-  public heroesUrl = 'http://localhost:4200/api/heroes';  // URL to web api
+  public readonly heroesUrl = 'http://localhost:3000/heroes';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -82,10 +82,12 @@ export class HeroService   {
   }
 
   updateHero(hero: Hero): Observable<any> {
-    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${hero.id}`)),
-      catchError(this.handleError<any>('updateHero'))
-    );
+    return this.http.put<Hero>(this.heroesUrl + '/' + hero.id, JSON.stringify(hero), this.httpOptions)
+      .pipe(
+        tap(_ => this.log('save heroes')),
+        //retry(1),
+        catchError(this.handleError)
+      )
   }
 
  
@@ -103,5 +105,6 @@ export class HeroService   {
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
+    console.log(`HeroService: ${message}`);
   }
 }
