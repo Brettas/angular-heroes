@@ -9,7 +9,7 @@
           <div>
             <span class="badge badge-info">ID:{{hero.id}}</span>
           </div>
-          <form class="form-horizontal" (ngSubmit)="save()" [formGroup]="formulario">
+          <form class="form-horizontal" [formGroup]="formulario">
             <div class="form-group">
               <label for="name">Hero Name
                 <input type="text" class="form-control" formControlName="name">

@@ -1,21 +1,6 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "hola",
-      "skills": "super"
-    },
-    {
-      "id": 2,
-      "name": "Flash",
-      "skills": "Super velocidade"
-    },
-    {
-      "id": 3,
-      "name": "Bombasto",
-      "skills": "Sopro congelante"
-    },
-    {
       "id": 4,
       "name": "Celeritas",
       "skills": "Super Sentidos"
@@ -49,6 +34,14 @@
       "id": 10,
       "name": "Tornado",
       "skills": "Ventania"
+    },
+    {
+      "name": "Ironman",
+      "id": 11
+    },
+    {
+      "name": "post",
+      "id": 12
     }
   ]
 }
